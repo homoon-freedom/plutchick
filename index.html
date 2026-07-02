@@ -376,16 +376,7 @@
     </style>
 </head>
 <body>
-
-    <div style="width: 100%; max-width: 1200px; padding: 10px; display: flex; justify-content: flex-start;">
-        <a href="https://homoon-freedom.github.io/FeelingNeeds/index.html" 
-           style="text-decoration: none; color: #666; font-size: 0.9rem; border: 1px solid #ccc; padding: 5px 15px; border-radius: 20px; background: #fff; transition: 0.3s;"
-           onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='#fff'">
-            &larr; 돌아가기
-        </a>
-    </div>
-
-    <h1>플루칙의 감정 바퀴</h1>
+ <h1>플루칙의 감정 바퀴</h1>
     <p class="subtitle">Plutchik's Wheel of Emotions</p>
     
     <div class="image-container" style="text-align: center; margin: 20px 0;" title="클릭해서 크게 보기">
@@ -972,7 +963,14 @@
             `;
 
             modalOverlay.classList.add('active');
+
+            // 브라우저가 DOM을 업데이트할 아주 짧은 시간을 준 뒤 스크롤을 맨 위로 이동
+            setTimeout(() => {
+                modalBody.scrollTop = 0;
+            }, 10);
         }
+
+
 
         function closeModal() {
             modalOverlay.classList.remove('active');
