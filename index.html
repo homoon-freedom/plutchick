@@ -143,7 +143,25 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 15px;
         }
+        /* 2차, 3차 복합 감정 전용 3단 그리드 */
+        .complex-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 한 줄에 3개 고정 */
+            gap: 15px;
+        }
 
+        /* 화면이 좁아질 경우를 대비한 반응형 처리 */
+        @media (max-width: 992px) {
+            .complex-grid {
+                grid-template-columns: repeat(2, 1fr); /* 태블릿에서는 2개씩 */
+            }
+        }
+
+        @media (max-width: 600px) {
+            .complex-grid {
+                grid-template-columns: 1fr; /* 모바일에서는 1개씩 */
+            }
+        }
         .dyad-card {
             background: #fff;
             border-radius: 8px;
@@ -539,7 +557,7 @@
         </div>
 
         <h2>2차 / 3차 복합 감정 (심화 혼합)</h2>
-        <div class="dyad-grid">
+        <div class="complex-grid"> <!-- 클래스 이름을 dyad-grid에서 complex-grid로 변경 -->
             <div class="dyad-card" data-emotion="hope" data-color="#B5D585" data-text="#333" style="border-color: #B5D585;">
                 <div class="dyad-result">동경</div>
                 <div class="dyad-formula">예기 + 기쁨 + 신뢰 + 놀람 등</div>
